@@ -1,6 +1,6 @@
 output "tfstate_resource_group_name" {
   description = "Resource group containing the Terraform state backend."
-  value       = azurerm_resource_group.bootstrap_shared.name
+  value       = module.bootstrap_shared_rg
 }
 
 output "tfstate_storage_account_name" {

@@ -19,4 +19,5 @@ variable "project_name" {
 variable "storage_account_suffix" {
   description = "Unique suffix for the Terraform state storage account. Use lowercase letters and numbers only."
   type        = string
+  default     = "dec"
 }

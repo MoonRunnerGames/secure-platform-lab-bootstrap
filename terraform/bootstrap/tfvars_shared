@@ -1,4 +1,0 @@
-location               = "uksouth"
-environment            = "shared"
-project_name           = "secure-platform-lab"
-storage_account_suffix = "dec"
