@@ -13,7 +13,7 @@ resource "azurerm_federated_identity_credential" "github_actions" {
   ]
 
   issuer  = "https://token.actions.githubusercontent.com"
-  subject = "repo:${local.github_owner}/${local.github_repo}:ref:refs/heads/main"
+  subject = "repo:MoonRunnerGames@42037568/secure-platform-lab-infra@1244475075:ref:refs/heads/main"
 }
 
 resource "azurerm_role_assignment" "storage_contributor" {
