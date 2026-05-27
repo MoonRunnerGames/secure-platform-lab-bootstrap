@@ -16,6 +16,18 @@ resource "azurerm_federated_identity_credential" "github_actions" {
   subject = "repo:MoonRunnerGames@42037568/secure-platform-lab-infra@1244475075:ref:refs/heads/main"
 }
 
+resource "azurerm_federated_identity_credential" "github_actions_dev_environment" {
+  name                      = "fc-secureplatform-lab-dev-env"
+  user_assigned_identity_id = azurerm_user_assigned_identity.github_actions_mid.id
+
+  audience = [
+    "api://AzureADTokenExchange"
+  ]
+
+  issuer  = "https://token.actions.githubusercontent.com"
+  subject = "repo:MoonRunnerGames@42037568/secure-platform-lab-infra@1244475075:environment:dev"
+}
+
 resource "azurerm_role_assignment" "storage_contributor" {
   scope                = azurerm_storage_account.tfstate.id
   role_definition_name = "Storage Blob Data Contributor"
